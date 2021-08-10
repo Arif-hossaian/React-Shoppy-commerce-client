@@ -1,5 +1,6 @@
-import { AppBar, Box, Toolbar, withStyles } from "@material-ui/core";
+import { AppBar, Toolbar, withStyles } from "@material-ui/core";
 import useStyles from "./styles.js";
+import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar/SearchBar.jsx";
 import NavButton from "./NavButton/NavButton";
 
@@ -15,9 +16,9 @@ const Navbar = () => {
   return (
     <AppBar position="fixed" className={styles.header}>
       <ToolBar>
-        <Box className={styles.component}>
+        <Link to="/" className={styles.component}>
           <img src={logoURL} alt="Mobileshop" className={styles.logo} />
-        </Box>
+        </Link>
         <SearchBar />
         <NavButton />
       </ToolBar>
