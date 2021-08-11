@@ -58,7 +58,7 @@ const Slide = () => {
         itemClass="carousel-item-padding-40-px"
       >
         {products.map((product) => (
-          <Box textAlign="center" className={styles.wrapper}>
+          <Box textAlign="center" className={styles.wrapper} key={product.id}>
             <img src={product.url} className={styles.image} alt={product.url} />
             <Typography
               className={styles.text}
