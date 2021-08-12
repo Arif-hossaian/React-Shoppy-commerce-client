@@ -60,7 +60,7 @@ const ProductDetails = ({ match }) => {
           </Grid>
         </Grid>
       ) : (
-        <Typography>Loading</Typography>
+        <Typography variant="h6" align="center">Loading....</Typography>
       )}
     </Box>
   );

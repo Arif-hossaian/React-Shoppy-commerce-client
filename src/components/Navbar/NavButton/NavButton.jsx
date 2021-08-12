@@ -6,11 +6,13 @@ import useStyles from "./styles.js";
 import LoginDialog from "../../Login/LoginDialog.jsx";
 import { LoginContext } from "./../../../context/ContextProvider";
 import Profile from "./../Profile/Profile";
+import { useSelector } from "react-redux";
 
 const NavButton = () => {
   const styles = useStyles();
   const [open, setOpen] = useState(false);
   const { account, setAccount } = useContext(LoginContext);
+  const { cartItems } = useSelector(state => state.cart)
   const openLoginDialog = () => {
     setOpen(true);
   };
@@ -30,7 +32,7 @@ const NavButton = () => {
         </Link>
       )}
       <Link to="/cart" className={styles.container}>
-        <Badge badgeContent={4} color="secondary">
+        <Badge badgeContent={cartItems.length} color="secondary">
           <ShoppingCart />
         </Badge>
         <Typography style={{ marginLeft: "10px" }}>Cart</Typography>
