@@ -82,7 +82,7 @@ const LoginDialog = ({ open, setOpen, setAccount }) => {
               <TextField
                 name="username"
                 required
-                label="Enter Email/Mobile number"
+                label="Enter user namer"
                 onChange={(e) => onValueChange(e)}
               />
               <TextField

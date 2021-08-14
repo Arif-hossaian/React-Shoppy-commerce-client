@@ -1,12 +1,13 @@
 import * as actionTypes from "../constants/cartConstants";
 import axios from "axios";
+import { baseURL } from "../../baseURL";
 
 export const addToCart = (id, quantity) => async (dispatch, getState) => {
   try {
-    const { data } = await axios.get(`http://localhost:8000/product/${id}`);
-    dispatch({ type: actionTypes.ADD_TO_CART, payload: { ...data } });
-    // dispatch({ type: actionTypes.ADD_TO_CART, payload: { ...data, quantity } });
-    // localStorage.setItem("cart", JSON.stringify(getState().cart.cartItems));
+    const { data } = await axios.get(`${baseURL}/product/${id}`);
+    // dispatch({ type: actionTypes.ADD_TO_CART, payload: { ...data } });
+    dispatch({ type: actionTypes.ADD_TO_CART, payload: { ...data, quantity } });
+    localStorage.setItem("cart", JSON.stringify(getState().cart.cartItems));
   } catch (error) {
     console.log("Error while calling cart API");
   }
@@ -18,5 +19,5 @@ export const removeFromCart = (id) => (dispatch, getState) => {
     type: actionTypes.REMOVE_FROM_CART,
     payload: id,
   });
-  //localStorage.setItem("cart", JSON.stringify(getState().cart.cartItems));
+  localStorage.setItem("cart", JSON.stringify(getState().cart.cartItems));
 };

@@ -1,0 +1,1 @@
+export const baseURL = 'https://shoppy-commerce.herokuapp.com';

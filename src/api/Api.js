@@ -1,10 +1,10 @@
 import axios from "axios";
+import { baseURL } from "../baseURL";
 
-const URL = "http://localhost:8000";
 
 export const authenticateLogin = async (user) => {
   try {
-    return await axios.post(`${URL}/login`, user);
+    return await axios.post(`${baseURL}/login`, user);
   } catch (error) {
     console.log("error while calling login API: ", error);
   }
@@ -12,7 +12,7 @@ export const authenticateLogin = async (user) => {
 
 export const authenticateSignup = async (user) => {
   try {
-    return await axios.post(`${URL}/signup`, user);
+    return await axios.post(`${baseURL}/signup`, user);
   } catch (error) {
     console.log("error while calling Signup API: ", error);
   }
@@ -20,16 +20,16 @@ export const authenticateSignup = async (user) => {
 
 export const getProductById = async (id) => {
   try {
-    return await axios.get(`${URL}/product/${id}`);
+    return await axios.get(`${baseURL}/product/${id}`);
   } catch (error) {
     console.log("Error while getting product by id response", error);
   }
 };
 
-export const payUsingPaytm = async (data) => {
+export const payUsingSslCommerz = async (data) => {
   try {
     console.log("payment api");
-    let response = await axios.post(`${URL}/payment`, data);
+    let response = await axios.post(`${baseURL}/ssl-request`, data);
     console.log(response.data);
     return response.data;
   } catch (error) {

@@ -30,6 +30,7 @@ export default makeStyles((theme) => ({
     width: 250,
   },
   menuButton: {
+    // backgroundColor: "#fff",
     display: "none",
     [theme.breakpoints.down("sm")]: {
       display: "block",

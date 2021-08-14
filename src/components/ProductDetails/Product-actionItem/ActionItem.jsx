@@ -5,6 +5,7 @@ import { addToCart } from "../../../redux/actions/cartActions.js";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import useStyles from "./styles.js";
+import { payUsingSslCommerz } from "../../../api/Api.js";
 
 const ActionItem = ({ product }) => {
   const styles = useStyles();
@@ -14,6 +15,9 @@ const ActionItem = ({ product }) => {
     dispatch(addToCart(product.id));
     history.push("/cart");
   };
+  const buyNow = async () => {
+    await payUsingSslCommerz()
+  }
   return (
     <Box className={styles.leftContainer}>
       <img
@@ -34,6 +38,7 @@ const ActionItem = ({ product }) => {
       <Button
         className={clsx(styles.button, styles.buyNow)}
         variant="contained"
+        onClick={() => buyNow()}
       >
         <Flash /> Buy Now
       </Button>
