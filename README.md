@@ -2,8 +2,8 @@
 
 ### [Live site](https://shoppy-commerce.netlify.app/)
 
-![Layout UI](https://tinyurl.com/yjb65ebw)
+![Layout UI](https://i.ibb.co/p07NXGS/Shoppy-commerce.png)
 
-![Regiter UI](https://tinyurl.com/ydoz7la5)
+![Regiter UI](https://i.ibb.co/nfRCTCQ/Shoppy-commerce.png)
 
-![product details page](https://tinyurl.com/ydzgoazv)
+![product details page](https://i.ibb.co/cy6HHWp/Shoppy-commerce.png)
